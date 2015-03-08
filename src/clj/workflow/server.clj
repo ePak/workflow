@@ -17,7 +17,7 @@
   (route/not-found "Page not found")
   )
 
-(def website (-> (site http-routes)
+(def http-handler (-> (site http-routes)
                  (directoryindex "index.html")))
 
 (defn -main

@@ -1,16 +1,26 @@
 (defproject workflow "0.1.0-SNAPSHOT"
-  :description "A workflow application for JIRA"
+  :description "Setting up workflow step-by-setp"
   ;:url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.7.0-alpha5"]
-                 [compojure "1.3.2"]
-                 [ring "1.3.2"]
-                 ]
+
   :main ^:skip-aot workflow.server
   :target-path "target/%s"
   :source-paths ["src/clj" "src/cljs"]
+
+  :dependencies [[org.clojure/clojure "1.7.0-alpha5"]
+                 [compojure "1.3.2"]
+                 [ring "1.3.2"]
+                 [org.clojure/clojurescript "0.0-2913"]]
+
+  :plugins [[lein-cljsbuild "1.0.5"]]
+
+  :cljsbuild {:builds {:main {:source-paths ["src/cljs"]
+                              :compiler {:output-to "resources/public/js/workflow.js"
+                                         :output-dir "out"
+                                         :optimizations :whitespace
+                                         :pretty-printing true }}}}
+
   :profiles {:dev {:source-paths ["dev"]
-                   :dependencies [[org.clojure/tools.namespace "0.2.10"]
-                                  ]} 
+                   :dependencies [[org.clojure/tools.namespace "0.2.10"]]} 
              :uberjar {:aot :all}})

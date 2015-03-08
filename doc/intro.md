@@ -1,3 +1,3 @@
-# Introduction to timesheet
+# Introduction to workflow
 
 TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)
