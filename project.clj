@@ -26,8 +26,11 @@
                                   [figwheel "0.2.5"]
                                   [figwheel-sidecar "0.2.5"]
                                   [enlive "1.1.5"]
-                                  [org.clojure/core.incubator "0.1.3"]]
+                                  [org.clojure/core.incubator "0.1.3"]
+                                  [com.cemerick/piggieback "0.1.5"]
+                                  [weasel "0.6.0"]]
                    :plugins [[lein-figwheel "0.2.5-SNAPSHOT"]]
+                   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
                    :cljsbuild {:builds {:main {:output-dir "resources/public/js/out"
                                               :source-map "resources/public/js/out.js.map"
                                               :optimizations :none}}}

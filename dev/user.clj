@@ -8,7 +8,8 @@
             [figwheel-sidecar.core :as fig]
             [clojurescript-build.auto :as auto]
             [net.cgrand.enlive-html :refer [html append prepend template]]
-            [clojure.core.incubator :refer [dissoc-in]]))
+            [clojure.core.incubator :refer [dissoc-in]]
+            [weasel.repl.websocket :as weasel]))
 
 (def system nil)
 (def fig-state nil)
@@ -66,3 +67,6 @@
 (defn reset []
   (stop)
   (refresh :after 'user/go))
+
+(defn brepl-env []
+  (weasel/repl-env :ip "0.0.0.0" :port 9001))
