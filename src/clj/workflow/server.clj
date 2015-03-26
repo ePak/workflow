@@ -14,11 +14,10 @@
 
 (defroutes http-routes
   (route/resources "/")
-  (route/not-found "Page not found")
-  )
+  (route/not-found "Page not found"))
 
 (def http-handler (-> (site http-routes)
-                 (directoryindex "index.html")))
+                      (directoryindex "index.html")))
 
 (defn -main
   "I don't do a whole lot ... yet."

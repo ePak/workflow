@@ -1,5 +1,5 @@
-(ns workflow.app
-  
-  )
+(ns workflow.app)
 
-(js/alert "hello!!!")
+(defn main []
+  (println "workflow.app"))
+

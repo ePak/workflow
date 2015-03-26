@@ -22,5 +22,14 @@
                                          :pretty-printing true }}}}
 
   :profiles {:dev {:source-paths ["dev"]
-                   :dependencies [[org.clojure/tools.namespace "0.2.10"]]} 
+                   :dependencies [[org.clojure/tools.namespace "0.2.10"]
+                                  [figwheel "0.2.5"]
+                                  [figwheel-sidecar "0.2.5"]
+                                  [enlive "1.1.5"]
+                                  [org.clojure/core.incubator "0.1.3"]]
+                   :plugins [[lein-figwheel "0.2.5-SNAPSHOT"]]
+                   :cljsbuild {:builds {:main {:output-dir "resources/public/js/out"
+                                              :source-map "resources/public/js/out.js.map"
+                                              :optimizations :none}}}
+                   :figwheel {:css-dirs ["resources/public/css"]}}
              :uberjar {:aot :all}})
