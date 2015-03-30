@@ -11,7 +11,8 @@
   :dependencies [[org.clojure/clojure "1.7.0-alpha5"]
                  [compojure "1.3.2"]
                  [ring "1.3.2"]
-                 [org.clojure/clojurescript "0.0-2913"]]
+                 [org.clojure/clojurescript "0.0-2913"]
+                 [org.omcljs/om "0.8.8"]]
 
   :plugins [[lein-cljsbuild "1.0.5"]]
 
